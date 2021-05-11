@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Down",
+        "repositoryURL": "https://github.com/johnxnguyen/Down.git",
+        "state": {
+          "branch": null,
+          "revision": "f34b166be1f1db4aa8f573067e901d72f2a6be57",
+          "version": "0.11.0"
+        }
+      },
+      {
+        "package": "SwiftletUtilities",
+        "repositoryURL": "https://github.com/Appracatappra/SwiftletUtilities.git",
+        "state": {
+          "branch": null,
+          "revision": "8963fe7f97a0cea8b3977e63172ef2f0a891eb25",
+          "version": "1.0.5"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
