@@ -38,6 +38,14 @@ Here's an example of using `SwiftUiSharing` on  iOS/iPadOS:
  .help("Share your Shopping Lists")
  ```
 
+Which looks like this on iOS:
+
+![](Documentation/Images/Sharing03.png)
+
+Which looks like this on iPadOS:
+
+![](Documentation/Images/Sharing02.png)
+
 <a name="macOS-Example"></a>
 ## macOS Example
 
@@ -54,3 +62,7 @@ CommandGroup(replacing: .newItem){
  ...
 }
 ```
+
+Which looks like this on macOS:
+
+![](Documentation/Images/Sharing01.png)
