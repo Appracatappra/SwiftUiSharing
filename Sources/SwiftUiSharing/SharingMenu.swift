@@ -41,7 +41,7 @@ extension NSSharingService {
     ///   - title: The Title of the sub menu to build.
     ///   - icon: An optional icon to display on the sub menu.
     /// - Returns: The SwiftUI content of the menu.
-    static func sharingMenu(itemToShare text:String, title:String = "Share", icon:Image? = nil) -> some View {
+    public static func sharingMenu(itemToShare text:String, title:String = "Share", icon:Image? = nil) -> some View {
         return Menu(
             content: {
                 ForEach(NSSharingService.sharingServices(forItems: [""]), id: \.title) { item in
@@ -77,7 +77,7 @@ extension NSSharingService {
     ///   - icon: An optional icon to display by the sharing menu.
     ///   - contents: The closure to generate data to share on-the-fly when the user selects an item.
     /// - Returns: The SwiftUI content of the menu.
-    static func sharingMenu(title:String = "Share", icon:Image? = nil, contents:@escaping ()-> String) -> some View {
+    public static func sharingMenu(title:String = "Share", icon:Image? = nil, contents:@escaping ()-> String) -> some View {
         return Menu(
             content: {
                 ForEach(NSSharingService.sharingServices(forItems: [""]), id: \.title) { item in

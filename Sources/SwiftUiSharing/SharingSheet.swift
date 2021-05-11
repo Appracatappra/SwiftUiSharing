@@ -31,11 +31,11 @@ import Down
  ```
  
  */
-class SharingSheet:NSObject, UIActivityItemSource {
+public class SharingSheet:NSObject, UIActivityItemSource {
     
     // MARK: - Static Properties
     /// The common, shared SharingSheet controller.
-    static var shared:SharingSheet = SharingSheet()
+    public static var shared:SharingSheet = SharingSheet()
     
     // MARK: - Static Functions
     /**
@@ -62,7 +62,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      
      - Remark: If running on iPadOS and either the `fromX` or `fromY` properties are not provided, the popover will be presented from the center of the screen.
      */
-    static func openSheet(itemsToShare:[Any], activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
+    public static func openSheet(itemsToShare:[Any], activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
         let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: activities)
         UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: animated, completion: nil)
         
@@ -100,7 +100,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      
      - Remark: If running on iPadOS and either the `fromX` or `fromY` properties are not provided, the popover will be presented from the center of the screen.
      */
-    static func openPrintSheet(textToShare:String, font:UIFont = UIFont.systemFont(ofSize: 18), color:UIColor = UIColor.black, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
+    public static func openPrintSheet(textToShare:String, font:UIFont = UIFont.systemFont(ofSize: 18), color:UIColor = UIColor.black, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
         let attrs = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: color]
         let str = NSAttributedString(string: textToShare, attributes: attrs)
         let printText = UISimpleTextPrintFormatter(attributedText: str)
@@ -132,7 +132,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      
      - Remark: If running on iPadOS and either the `fromX` or `fromY` properties are not provided, the popover will be presented from the center of the screen.
      */
-    static func openMarkdownPrintSheet(markdown:String, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
+    public static func openMarkdownPrintSheet(markdown:String, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
         
         do {
             let parser = Down(markdownString: markdown)
@@ -170,7 +170,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      
      - Remark: If running on iPadOS and either the `fromX` or `fromY` properties are not provided, the popover will be presented from the center of the screen.
      */
-    static func openMarkdownPrintSheet(markdown:String, simpleText:String, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
+    public static func openMarkdownPrintSheet(markdown:String, simpleText:String, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
         
         do {
             let parser = Down(markdownString: markdown)
@@ -194,7 +194,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      - Parameter activityViewController: The UIActivityViewController being presented.
      - Returns: An object to use as the placeholder.
      */
-    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+    public func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
         
         if let item = data as? SharingSheetItem {
             // Return placeholder
@@ -218,7 +218,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      - Parameter itemForActivityType: The type of activity to return data for.
      - Returns: An object to use as the data.
      */
-    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+    public func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
         
         if let item = data as? SharingSheetItem {
             // Return placeholder
@@ -240,7 +240,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      - Parameter itemForActivityType: The type of activity to return the subject for.
      - Returns: An `String` to use as the subject.
      */
-    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+    public func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
         
         if let item = data as? SharingSheetItem {
             // Return placeholder
@@ -288,7 +288,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      
      - Remark: If running on iPadOS and either the `fromX` or `fromY` properties are not provided, the popover will be presented from the center of the screen.
      */
-    func openSheet(itemToShare:SharingSheetItem, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
+    public func openSheet(itemToShare:SharingSheetItem, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
         data = itemToShare
         
         openSheet(activities: activities, animated: animated, fromX: fromX, fromY: fromY)
@@ -305,7 +305,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      
      - Remark: If running on iPadOS and either the `fromX` or `fromY` properties are not provided, the popover will be presented from the center of the screen.
      */
-    func openSheet(itemToShare:SharingSheetContentProvider, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
+    public func openSheet(itemToShare:SharingSheetContentProvider, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
         data = itemToShare
         
         openSheet(activities: activities, animated: animated, fromX: fromX, fromY: fromY)
@@ -324,7 +324,7 @@ class SharingSheet:NSObject, UIActivityItemSource {
      
      - Remark: If running on iPadOS and either the `fromX` or `fromY` properties are not provided, the popover will be presented from the center of the screen.
      */
-    func openSheet(itemToShare:Any, title:String = "", placeholder:Any? = nil, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
+    public func openSheet(itemToShare:Any, title:String = "", placeholder:Any? = nil, activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
         data = SharingSheetItem(data: itemToShare, title: title, placeholder: placeholder)
         
         openSheet(activities: activities, animated: animated, fromX: fromX, fromY: fromY)
