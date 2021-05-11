@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Extensions  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Extensions" class="dashAnchor"></a>
+    <a title="Extensions  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">SwiftUiSharing Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Fappracatappra.com%2Fapi%2Fdocsets%2FSwiftUiSharing.xml"><img src="img/dash.png"/>Install in Dash</a></p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">SwiftUiSharing Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Extensions  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/SharingSheet.html">SharingSheet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SharingSheetContentProvider.html">SharingSheetContentProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SharingSheetItem.html">SharingSheetItem</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/NSSharingService.html">NSSharingService</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Extensions</h1>
+            <p>The following extensions are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NSSharingService"></a>
+                    <a name="//apple_ref/swift/Extension/NSSharingService" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NSSharingService">NSSharingService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Extends <code>NSSharingService</code> to provide a <strong>Sharing Menu</strong> on macOS in a SwiftUI multiplatform App. You provide an item to share and the name for the menu item to share or a completion that get&rsquo;s called when the user selects a menu item to provide the data to share, on-the-fly.</p>
+<h2 id='example' class='heading'>Example:</h2>
+<pre class="highlight swift"><code><span class="kt">CommandGroup</span><span class="p">(</span><span class="nv">replacing</span><span class="p">:</span> <span class="o">.</span><span class="n">newItem</span><span class="p">){</span>
+    <span class="kt">NSSharingService</span><span class="o">.</span><span class="nf">sharingMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Share Shopping List"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">MasterDataStore</span><span class="o">.</span><span class="kt">SharedDataStore</span><span class="o">.</span><span class="nf">allShoppingLists</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kt">Divider</span><span class="p">()</span>
+
+    <span class="o">...</span>
+<span class="p">}</span>
+</code></pre>
+
+                        <a href="Extensions/NSSharingService.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">NSSharingService</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external">Appracatappra, LLC</a>. All rights reserved. (Last updated: 2021-05-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

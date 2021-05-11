@@ -26,7 +26,7 @@ import AppKit
  }
  ```
  */
-extension NSSharingService {
+public extension NSSharingService {
     
     /// Creates a **Sharing** submenu with the given title to share the given text using the available options provided on the machine that the user is running the app on.
     ///  ## Example:

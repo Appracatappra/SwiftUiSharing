@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Classes  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Classes" class="dashAnchor"></a>
+    <a title="Classes  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">SwiftUiSharing Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Fappracatappra.com%2Fapi%2Fdocsets%2FSwiftUiSharing.xml"><img src="img/dash.png"/>Install in Dash</a></p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">SwiftUiSharing Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Classes  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/SharingSheet.html">SharingSheet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SharingSheetContentProvider.html">SharingSheetContentProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SharingSheetItem.html">SharingSheetItem</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/NSSharingService.html">NSSharingService</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Classes</h1>
+            <p>The following classes are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Class/SharingSheet" class="dashAnchor"></a>
+                    <a class="token" href="#/">SharingSheet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Presents a standard <code>UIKit</code> Share Sheet from within a SwiftUI View on iOS or iPad OS. Automatically handles placing the sheet into a Popover on iPadOS.</p>
+<h2 id='example' class='heading'>Example:</h2>
+<pre class="highlight swift"><code><span class="kt">Button</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span>
+    <span class="kt">SharingSheet</span><span class="o">.</span><span class="nf">openMarkdownPrintSheet</span><span class="p">(</span><span class="nv">markdown</span><span class="p">:</span> <span class="n">dataStore</span><span class="o">.</span><span class="nf">allShoppingLists</span><span class="p">(</span><span class="nv">asMarkdown</span><span class="p">:</span><span class="kc">true</span><span class="p">),</span> <span class="nv">simpleText</span><span class="p">:</span> <span class="n">dataStore</span><span class="o">.</span><span class="nf">allShoppingLists</span><span class="p">(),</span> <span class="nv">fromX</span><span class="p">:</span> <span class="mf">245.0</span><span class="p">,</span> <span class="nv">fromY</span><span class="p">:</span> <span class="mf">32.0</span><span class="p">)</span>
+<span class="p">})</span> <span class="p">{</span>
+    <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"square.and.arrow.up"</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="kt">Color</span><span class="p">(</span><span class="s">"AccentColor"</span><span class="p">))</span>
+<span class="p">}</span>
+<span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mf">24.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mf">24.0</span><span class="p">)</span>
+<span class="o">.</span><span class="nf">help</span><span class="p">(</span><span class="s">"Share your Shopping Lists"</span><span class="p">)</span>
+</code></pre>
+
+                        <a href="Classes/SharingSheet.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Class/SharingSheetContentProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/">SharingSheetContentProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides data to be shared via a series of callbacks for <code>data</code>, <code>title</code> and <code>placeholder</code> to support different data for different types of sharing activites (<code>UIActivity.ActivityType</code>).</p>
+
+                        <a href="Classes/SharingSheetContentProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Class/SharingSheetItem" class="dashAnchor"></a>
+                    <a class="token" href="#/">SharingSheetItem</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Holds information about a piece of data to be shared via a <code><a href="Classes/SharingSheet.html">SharingSheet</a></code>.</p>
+
+                        <a href="Classes/SharingSheetItem.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external">Appracatappra, LLC</a>. All rights reserved. (Last updated: 2021-05-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
