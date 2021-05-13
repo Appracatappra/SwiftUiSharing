@@ -1,10 +1,8 @@
 # SwiftUiSharing for Swift and SwiftUI
 
-![](https://img.shields.io/badge/license-MIT-green) ![](https://img.shields.io/badge/maintained%3F-Yes-green) ![](https://img.shields.io/badge/iOS-13.0-red) ![](https://img.shields.io/badge/macOS-10.15-red)  ![](https://img.shields.io/badge/release-v1.0.0-blue)
+![](https://img.shields.io/badge/license-MIT-green) ![](https://img.shields.io/badge/maintained%3F-Yes-green) ![](https://img.shields.io/badge/swift-5.4-green) ![](https://img.shields.io/badge/iOS-13.0-red) ![](https://img.shields.io/badge/macOS-10.15-red)  ![](https://img.shields.io/badge/release-v1.0.4-blue)
 
 Provides a **Sharing Sheet** on iOS & iPadOS and a **Sharing Menu** on macOS in a SwiftUI fashion that allows the user to share a piece of data using the **Sharing Options** available on the device the app is running on.
-
-Created by developers, for developers. Appracatappra's packages are designed to be quickly added to your app's project with a minimum of code and effort, making it easy to add high-quality, professional features and functionality to your app without having to write tons of repetitive, boilerplate code.
 
 <a name="Installation"></a>
 ## Installation
