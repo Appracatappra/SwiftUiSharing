@@ -1,25 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Down",
-        "repositoryURL": "https://github.com/johnxnguyen/Down.git",
-        "state": {
-          "branch": null,
-          "revision": "f34b166be1f1db4aa8f573067e901d72f2a6be57",
-          "version": "0.11.0"
-        }
-      },
-      {
-        "package": "SwiftletUtilities",
-        "repositoryURL": "https://github.com/Appracatappra/SwiftletUtilities.git",
-        "state": {
-          "branch": null,
-          "revision": "f50bc2f4b379abb87588436aa0f3101ebf33dd59",
-          "version": "1.0.7"
-        }
+  "pins" : [
+    {
+      "identity" : "down",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnxnguyen/Down.git",
+      "state" : {
+        "revision" : "f34b166be1f1db4aa8f573067e901d72f2a6be57",
+        "version" : "0.11.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "logmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Appracatappra/LogManager",
+      "state" : {
+        "revision" : "bc21e80add4315c28e9461b8f583cfd79e4c74f8",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "swiftletutilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Appracatappra/SwiftletUtilities.git",
+      "state" : {
+        "revision" : "bfb3f6a96169bbc6a8d02acfdabd2c0e5de7093f",
+        "version" : "1.1.11"
+      }
+    }
+  ],
+  "version" : 2
 }

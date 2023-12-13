@@ -14,7 +14,7 @@ final class SwiftUiSharingTests: XCTestCase {
     func testSwiftUiSharing() {
         #if os(iOS)
         let text = "Hello World"
-        let item = SharingSheetItem(data: text)
+        let item:SharingSheetItem? = SharingSheetItem(data: text)
         XCTAssert(item != nil)
         #else
         XCTAssert(true)
