@@ -1,0 +1,8 @@
+version: 1
+builder:
+  configs:
+  - platform: ios
+    scheme: SwiftUiSharing
+  - platform: macos-xcodebuild
+    scheme: SwiftUiSharing
+  - documentation_targets: [SwiftUiSharing]
