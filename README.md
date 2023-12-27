@@ -4,6 +4,14 @@
 
 Provides a **Sharing Sheet** on iOS & iPadOS and a **Sharing Menu** on macOS in a SwiftUI fashion that allows the user to share a piece of data using the **Sharing Options** available on the device the app is running on.
 
+## Support
+
+If you find `SwiftUiSharing` useful and would like to help support its continued development and maintenance, please consider making a small donation, especially if you are using it in a commercial product:
+
+<a href="https://www.buymeacoffee.com/KevinAtAppra" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+It's through the support of contributors like yourself, I can continue to build, release and maintain high-quality, well documented Swift Packages like `SwiftUiSharing` for free.
+
 <a name="Installation"></a>
 ## Installation
 
