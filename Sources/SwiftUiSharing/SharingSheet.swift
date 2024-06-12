@@ -64,12 +64,12 @@ public class SharingSheet:NSObject, UIActivityItemSource {
      */
     public static func openSheet(itemsToShare:[Any], activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
         let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: activities)
-        UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: animated, completion: nil)
+        SwiftUISharing.keyWindow?.rootViewController?.present(activityVC, animated: animated, completion: nil)
         
         if HardwareInformation.isPad {
             let x = (fromX == nil) ? UIScreen.main.bounds.width / 2.1 : CGFloat(fromX!)
             let y = (fromY == nil) ? UIScreen.main.bounds.height / 2.3 : CGFloat(fromY!)
-            activityVC.popoverPresentationController?.sourceView = UIApplication.shared.windows.first
+            activityVC.popoverPresentationController?.sourceView = SwiftUISharing.keyWindow
             activityVC.popoverPresentationController?.sourceRect = CGRect(x: x, y: y, width: 32, height: 32)
         }
     }
@@ -267,12 +267,12 @@ public class SharingSheet:NSObject, UIActivityItemSource {
      */
     private func openSheet(activities:[UIActivity]? = nil, animated:Bool = true, fromX:Double? = nil, fromY:Double? = nil) {
         let activityVC = UIActivityViewController(activityItems: [self], applicationActivities: activities)
-        UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: animated, completion: nil)
+        SwiftUISharing.keyWindow?.rootViewController?.present(activityVC, animated: animated, completion: nil)
         
         if HardwareInformation.isPad {
             let x = (fromX == nil) ? UIScreen.main.bounds.width / 2.1 : CGFloat(fromX!)
             let y = (fromY == nil) ? UIScreen.main.bounds.height / 2.3 : CGFloat(fromY!)
-            activityVC.popoverPresentationController?.sourceView = UIApplication.shared.windows.first
+            activityVC.popoverPresentationController?.sourceView = SwiftUISharing.keyWindow
             activityVC.popoverPresentationController?.sourceRect = CGRect(x: x, y: y, width: 32, height: 32)
         }
     }
