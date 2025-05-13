@@ -31,11 +31,11 @@ import Down
  ```
  
  */
-public class SharingSheet:NSObject, UIActivityItemSource {
+@MainActor public class SharingSheet:NSObject, @preconcurrency UIActivityItemSource {
     
     // MARK: - Static Properties
     /// The common, shared SharingSheet controller.
-    public static var shared:SharingSheet = SharingSheet()
+    public static let shared:SharingSheet = SharingSheet()
     
     // MARK: - Static Functions
     /**

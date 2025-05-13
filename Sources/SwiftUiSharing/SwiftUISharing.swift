@@ -10,7 +10,7 @@ import UIKit
 
 class SwiftUISharing {
     
-    static var keyWindow: UIWindow? {
+    @MainActor static var keyWindow: UIWindow? {
       let allScenes = UIApplication.shared.connectedScenes
       for scene in allScenes {
         guard let windowScene = scene as? UIWindowScene else { continue }
