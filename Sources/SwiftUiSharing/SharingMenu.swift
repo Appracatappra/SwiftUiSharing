@@ -45,6 +45,7 @@ public extension NSSharingService {
         return Menu(
             content: {
                 ForEach(NSSharingService.sharingServices(forItems: [""]), id: \.title) { item in
+                    nonisolated(unsafe) let item = item
                     Button(action: { item.perform(withItems: [text]) }) {
                         Image(nsImage: item.image)
                         Text(item.title)
@@ -81,8 +82,9 @@ public extension NSSharingService {
         return Menu(
             content: {
                 ForEach(NSSharingService.sharingServices(forItems: [""]), id: \.title) { item in
+                    nonisolated(unsafe) let item = item
+                    let text = contents()
                     Button(action: {
-                        let text = contents()
                         item.perform(withItems: [text])
                     }) {
                         Image(nsImage: item.image)

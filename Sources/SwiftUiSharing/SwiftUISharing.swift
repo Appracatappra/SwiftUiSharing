@@ -6,10 +6,15 @@
 //
 
 import Foundation
+
+#if !os(macOS)
 import UIKit
+#endif
 
 class SwiftUISharing {
     
+    #if os(macOS)
+    #else
     @MainActor static var keyWindow: UIWindow? {
       let allScenes = UIApplication.shared.connectedScenes
       for scene in allScenes {
@@ -20,4 +25,5 @@ class SwiftUISharing {
        }
         return nil
     }
+    #endif
 }
