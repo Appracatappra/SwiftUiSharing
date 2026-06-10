@@ -67,8 +67,8 @@ import Down
         SwiftUISharing.keyWindow?.rootViewController?.present(activityVC, animated: animated, completion: nil)
         
         if HardwareInformation.isPad {
-            let x = (fromX == nil) ? UIScreen.main.bounds.width / 2.1 : CGFloat(fromX!)
-            let y = (fromY == nil) ? UIScreen.main.bounds.height / 2.3 : CGFloat(fromY!)
+            let x = (fromX == nil) ? HardwareInformation.currentScreenBounds.width / 2.1 : CGFloat(fromX!)
+            let y = (fromY == nil) ? HardwareInformation.currentScreenBounds.height / 2.3 : CGFloat(fromY!)
             activityVC.popoverPresentationController?.sourceView = SwiftUISharing.keyWindow
             activityVC.popoverPresentationController?.sourceRect = CGRect(x: x, y: y, width: 32, height: 32)
         }
@@ -270,8 +270,8 @@ import Down
         SwiftUISharing.keyWindow?.rootViewController?.present(activityVC, animated: animated, completion: nil)
         
         if HardwareInformation.isPad {
-            let x = (fromX == nil) ? UIScreen.main.bounds.width / 2.1 : CGFloat(fromX!)
-            let y = (fromY == nil) ? UIScreen.main.bounds.height / 2.3 : CGFloat(fromY!)
+            let x = (fromX == nil) ? HardwareInformation.currentScreenBounds.width / 2.1 : CGFloat(fromX!)
+            let y = (fromY == nil) ? HardwareInformation.currentScreenBounds.height / 2.3 : CGFloat(fromY!)
             activityVC.popoverPresentationController?.sourceView = SwiftUISharing.keyWindow
             activityVC.popoverPresentationController?.sourceRect = CGRect(x: x, y: y, width: 32, height: 32)
         }

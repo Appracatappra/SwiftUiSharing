@@ -41,28 +41,19 @@ public extension NSSharingService {
     ///   - title: The Title of the sub menu to build.
     ///   - icon: An optional icon to display on the sub menu.
     /// - Returns: The SwiftUI content of the menu.
-    public static func sharingMenu(itemToShare text:String, title:String = "Share", icon:Image? = nil) -> some View {
-        return Menu(
-            content: {
-                ForEach(NSSharingService.sharingServices(forItems: [""]), id: \.title) { item in
-                    nonisolated(unsafe) let item = item
-                    Button(action: { item.perform(withItems: [text]) }) {
-                        Image(nsImage: item.image)
-                        Text(item.title)
-                    }
-                }
-            },
-            label: {
-                Text(title)
-                if let image = icon {
-                    image
-                }
+    static func sharingMenu(itemToShare text:String, title:String = "Share", icon:Image? = nil) -> some View {
+        return Button(action: {
+            showSharingPicker(forItems: [text])
+        }) {
+            Text(title)
+            if let image = icon {
+                image
             }
-        )
+        }
     }
     
     
-    /// Creates a **Sharing** submenu with the given title to share the given text using the available options provided on the machine that the user is running the app on. The text is generated on-the-fly via a closure when the user selects a menu item.
+    /// Creates a **Sharing** menu item with the given title to share the given text using the available options provided on the machine that the user is running the app on. The text is generated on-the-fly via a closure when the user selects a menu item.
     ///
     ///  ## Example:
     ///  ```swift
@@ -78,27 +69,25 @@ public extension NSSharingService {
     ///   - icon: An optional icon to display by the sharing menu.
     ///   - contents: The closure to generate data to share on-the-fly when the user selects an item.
     /// - Returns: The SwiftUI content of the menu.
-    public static func sharingMenu(title:String = "Share", icon:Image? = nil, contents:@escaping ()-> String) -> some View {
-        return Menu(
-            content: {
-                ForEach(NSSharingService.sharingServices(forItems: [""]), id: \.title) { item in
-                    nonisolated(unsafe) let item = item
-                    let text = contents()
-                    Button(action: {
-                        item.perform(withItems: [text])
-                    }) {
-                        Image(nsImage: item.image)
-                        Text(item.title)
-                    }
-                }
-            },
-            label: {
-                Text(title)
-                if let image = icon {
-                    image
-                }
+    static func sharingMenu(title:String = "Share", icon:Image? = nil, contents:@escaping @MainActor ()-> String) -> some View {
+        return Button(action: {
+            showSharingPicker(forItems: [contents()])
+        }) {
+            Text(title)
+            if let image = icon {
+                image
             }
-        )
+        }
+    }
+    
+    @MainActor
+    private static func showSharingPicker(forItems items:[Any]) {
+        guard let view = NSApp.keyWindow?.contentView ?? NSApp.mainWindow?.contentView else {
+            return
+        }
+        
+        let picker = NSSharingServicePicker(items: items)
+        picker.show(relativeTo: view.bounds, of: view, preferredEdge: .minY)
     }
 }
 #endif
